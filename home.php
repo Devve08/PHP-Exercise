@@ -11,6 +11,20 @@
 
       <header>
        <h1>WELCOME !!</h1>
+       <?php
+
+       $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+       if(strpos($fullUrl,"signup=empty") == true) {
+           echo "<p class='para'> You did not fill in all fields !</p>";
+           
+       } else if (strpos($fullUrl,"empty=error") == true) {
+           echo "<p class='para'> You did not fill in all fields ! </p>";
+       } else if (strpos($fullUrl,"password=error") == true){
+           echo "<p class='para'> Your passwords do not match ! </p>";
+       }
+
+       ?>
       </header>
     <section class="container">
      
@@ -68,6 +82,7 @@
 
        <div class="container-two">
 
+
           <h1> Login </h1>
 
           
@@ -103,6 +118,8 @@
                   </button>
               </div>
             </form>
+
+            
 
             
        

@@ -24,11 +24,11 @@ if (isset($_POST['submit-signup'])){
     $date = $_POST['date'];
     
 if (empty($usernam) || empty($fullname) || empty($confirmpass) || empty($email) || empty($phone) || empty($date) ){
-    header("location: home.php");
+    header("location: home.php?empty=error");
 }
 
 else if ($password !== $confirmpass){
-    header("location: home.php");
+    header("location: home.php?password=error");
 }
 
     else echo "success";
