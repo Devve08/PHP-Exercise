@@ -30,7 +30,9 @@ if (empty($usernam) || empty($fullname) || empty($confirmpass) || empty($email) 
 else if ($password !== $confirmpass){
     header("location: home.php?password=error");
 }
-
-    else echo "success";
+  
+    else
+    $a = "$usernam <br> $fullname <br> $email <br> $phone <br> $date";
+     echo $a;
 }
 
